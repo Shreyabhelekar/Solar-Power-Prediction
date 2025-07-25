@@ -6,13 +6,13 @@ This project uses a linear regression model to predict solar power output based 
 
 # Key Features
 
-Input Features: Environmental data such as temperature, humidity, cloud cover, and solar radiation.
+Input Features: Environmental data such as temperature, humidity, cloud cover, solar radiation, etc.
 
 Output: Predicted solar power output (in kW).
 
 Tech Stack: Python, Pandas, NumPy, Matplotlib, Scikit-learn.
 
-Graphs and Visualization: Correlation heatmaps, scatter plots for feature analysis, and prediction comparisons.
+Graphs and Visualization: scatter plots for feature analysis and prediction comparisons.
 
 # Workflow
 
@@ -30,9 +30,9 @@ Prediction: Accept user inputs for real-time predictions.
 
 # Installation
 
-Clone the repository: git clone https://github.com/Shreyabhelekar/Week-1.git
+Clone the repository: git clone https://github.com/Shreyabhelekar/Solar-Power-Prediction.git
 
-Navigate to the project directory: cd Week-1
+Navigate to the project directory: cd Solar-Power-Prediction
 
 Install required Python libraries: pip install -r requirements.txt
 
