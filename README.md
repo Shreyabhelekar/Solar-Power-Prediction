@@ -1,32 +1,70 @@
-# Predicting Solar Power Output Using Linear Regression
 
-# Overview
+# Solar Power Prediction using Linear Regression
 
-This project uses a linear regression model to predict solar power output based on meteorological data. The dataset includes features like temperature, humidity, cloud cover, solar radiation, and wind speed. By building a predictive model, this project demonstrates the application of machine learning in renewable energy forecasting.
+This project predicts solar power output based on weather and solar position data using **Linear Regression**. It uses both raw and engineered features to improve prediction accuracy.
 
-# Key Features
+---
 
-Input Features: Environmental data such as temperature, humidity, cloud cover, solar radiation, etc.
+## Features
 
-Output: Predicted solar power output (in kW).
+- Predicts **solar power output (in kW)** using:
+  - Zenith angle
+  - Angle of incidence
+  - Shortwave radiation
+  - Relative humidity
+  - Cloud cover
+  - Temperature
+- Uses **feature engineering** to create more informative inputs:
+  - Radiation × Humidity
+  - Radiation / Cloud Cover
+  - Temperature / Radiation
+  - Angle / Zenith
+- Includes **data normalization** using `StandardScaler`
+- Allows **interactive user input** for real-time predictions
+- Evaluated using:
+  - R² Score
+  - MAE, MSE, RMSE
 
-Tech Stack: Python, Pandas, NumPy, Matplotlib, Scikit-learn.
+---
 
-Graphs and Visualization: scatter plots for feature analysis and prediction comparisons.
+## Dataset
 
-# Workflow
+The dataset contains solar and weather data with the following key columns:
 
-Data Loading: Load the dataset from a CSV file.
+- `zenith`
+- `angle_of_incidence`
+- `shortwave_radiation_backwards_sfc`
+- `relative_humidity_2_m_above_gnd`
+- `total_cloud_cover_sfc`
+- `temperature_2_m_above_gnd`
+- `low_cloud_cover_low_cld_lay`
+- `generated_power_kw` *(target)*
 
-Preprocessing: Prepare data by handling missing values and splitting it into training and testing sets.
+**Engineered Features**:
+- `radiation_humidity`
+- `radiation_zenith`
+- `angle_ratio`
+- `radiation_efficiency`
+- `temp_radiation_ratio`
 
-Exploratory Data Analysis (EDA): Use graphs to analyze relationships between features and target variables.
+---
 
-Model Training: Train a linear regression model using Scikit-learn.
+## Technologies Used
 
-Evaluation: Assess model performance with metrics like Mean Squared Error (MSE) and R-squared score.
+- Python
+- NumPy, Pandas
+- Scikit-learn (LinearRegression, StandardScaler)
+- Jupyter Notebook
 
-Prediction: Accept user inputs for real-time predictions.
+---
+
+## How to Run
+
+1. Clone or download the repository.
+
+2. Install the required packages:
+   ```bash
+   pip install numpy pandas scikit-learn
 
 # Installation
 
@@ -38,4 +76,6 @@ Install required Python libraries: pip install -r requirements.txt
 
 # Results
 
-The trained model provides accurate solar power predictions, as indicated by low MSE and a high R-squared score. Visualizations, such as actual vs. predicted plots, demonstrate the model's performance.
+- Achieved R² score ~0.51
+- Used feature engineering to boost prediction quality
+- Prevented negative outputs using max(prediction, 0)
