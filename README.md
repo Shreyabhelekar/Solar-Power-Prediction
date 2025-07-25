@@ -76,6 +76,6 @@ Install required Python libraries: pip install -r requirements.txt
 
 # Results
 
-- Achieved R² score ~0.51
+- Achieved R² score ~0.63
 - Used feature engineering to boost prediction quality
 - Prevented negative outputs using max(prediction, 0)
